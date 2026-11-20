@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <!-- PASO 1: viewport, hoja de estilos y favicon -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AquaConsciente | ODS 6: Agua limpia y saneamiento</title>
+  <link rel="stylesheet" href="css/estilos.css">
+  <link rel="icon" type="image/svg+xml" href="iconos/favicon.svg">
+  <!-- Vinculación del JavaScript -->
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <!-- PASO 3: encabezado fijo con menú horizontal y desplegable vertical -->
+  <header class="cabecera">
+    <div class="contenedor barra">
+      <a class="marca" href="index.html">
+        <img src="imagenes/logo.png" alt="Logotipo de AquaConsciente: una gota de agua" width="40" height="40">
+        <span>AquaConsciente</span>
+      </a>
+      <nav aria-label="Navegación principal">
+        <ul class="menu">
+          <li><a href="index.html#inicio">Inicio</a></li>
+          <li><a href="index.html#nosotros">Nosotros</a></li>
+          <li><a href="index.html#servicios">Servicios</a></li>
+          <li>
+            <!-- Desplegable vertical: funciona con clic, Enter y toque -->
+            <details class="desplegable">
+              <summary>Resolver</summary>
+              <ul class="submenu">
+                <li><a href="index.html#orientador">Ver mi alerta de corte</a></li>
+                <li><a href="index.html#contacto">Registrar mi zona</a></li>
+              </ul>
+            </details>
+          </li>
+          <li><a href="index.html#proyectos">Proyectos</a></li>
+          <li><a href="index.html#galeria">Galería</a></li>
+          <li><a href="index.html#testimonios">Testimonios</a></li>
+          <li><a href="recursos.html">Video y guía</a></li>
+          <li><a href="index.html#contacto">Contáctanos</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- PASO 4: imagen y texto en dos columnas (problema + solución) -->
+    <section id="inicio" class="seccion hero">
+      <div class="contenedor dos-columnas">
+        <div>
+          <p class="etiqueta">ODS 6 · Agua limpia y saneamiento</p>
+          <h1>Cuidar el agua empieza en el momento en que la usamos</h1>
+          <p>
+            Muchos jóvenes ya ahorran agua, pero se enteran de un corte
+            programado cuando ya es tarde. AquaConsciente te avisa con
+            anticipación y te dice cuántos litros guardar para tu hogar.
+          </p>
+          <a class="boton" href="#orientador">Probar mi alerta de corte</a>
+        </div>
+        <img class="foto" src="imagenes/nosotros.jpg"
+             alt="Equipo 1 de AquaConsciente, estudiantes de la UPC, junto a una gota de agua">
+      </div>
+    </section>
+
+    <!-- QUIÉNES SOMOS -->
+    <section id="nosotros" class="seccion fondo-claro">
+      <div class="contenedor">
+        <h2>Quiénes somos</h2>
+        <p>
+          Somos el Equipo 1, estudiantes de la Universidad Peruana de Ciencias
+          Aplicadas (UPC) que promovemos iniciativas del ODS 6 a partir de
+          entrevistas con jóvenes sobre cómo usan y ahorran el agua.
+        </p>
+        <div class="tarjetas dos">
+          <article class="tarjeta">
+            <h3>Nuestra misión</h3>
+            <p>Ayudar a las personas a notar cuánta agua usan en el momento en que la usan, para sostener sus buenos hábitos.</p>
+          </article>
+          <article class="tarjeta">
+            <h3>Nuestra visión</h3>
+            <p>Ser una herramienta de referencia para que los hogares peruanos cuiden el agua de forma constante, coordinada y anticipada.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICIOS: una tarjeta por Historia de Usuario -->
+    <section id="servicios" class="seccion">
+      <div class="contenedor">
+        <h2>Servicios</h2>
+        <p>Tres servicios para quienes ya cuidan el agua y necesitan una ayuda concreta para sostener ese hábito.</p>
+        <div class="tarjetas">
+          <article class="tarjeta">
+            <p class="etiqueta">HU-01</p>
+            <h3>Monitoreo en vivo</h3>
+            <p>Muestra los litros y minutos usados mientras realizas una actividad, como lavar los platos, y avisa si el caño lleva demasiado tiempo abierto.</p>
+          </article>
+          <article class="tarjeta">
+            <p class="etiqueta">HU-02</p>
+            <h3>Mi hogar</h3>
+            <p>Registra tu zona y las personas que viven en casa para calcular recomendaciones personalizadas y compartir la meta de ahorro.</p>
+          </article>
+          <article class="tarjeta">
+            <p class="etiqueta">HU-03</p>
+            <h3>Alertas de corte</h3>
+            <p>Te avisa con anticipación de un corte programado en tu zona e incluye cuánta agua conviene almacenar.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PASO 5: ORIENTADOR (primera interacción, solo HTML y CSS) -->
+    <section id="orientador" class="seccion fondo-claro">
+      <div class="contenedor">
+        <h2>Prueba la alerta de corte</h2>
+        <p>Elige tu distrito y mira el aviso que recibirías. <strong>Es una simulación con datos de ejemplo.</strong></p>
+
+        <fieldset class="orientador">
+          <legend>¿En qué distrito vives?</legend>
+
+          <!-- Cada radio tiene un id distinto y el mismo name: se elige uno a la vez -->
+          <input type="radio" name="distrito" id="surco">
+          <label for="surco">Santiago de Surco</label>
+
+          <input type="radio" name="distrito" id="borja">
+          <label for="borja">San Borja</label>
+
+          <input type="radio" name="distrito" id="molina">
+          <label for="molina">La Molina</label>
+
+          <!-- Los paneles deben ser hermanos de los radios para que funcione :checked ~ -->
+          <div class="resultados">
+            <div class="respuesta inicial">
+              <p>Elige un distrito para ver tu aviso de ejemplo.</p>
+            </div>
+
+            <div class="respuesta surco">
+              <p class="alerta-tag">Corte programado · En 2 días</p>
+              <h3>Urb. Las Gardenias, Santiago de Surco</h3>
+              <ul>
+                <li><strong>Fecha:</strong> jueves 22 de mayo</li>
+                <li><strong>Horario estimado:</strong> 8:00 a. m. a 4:00 p. m.</li>
+                <li><strong>Plan de preparación:</strong> guarda 18 litros (3 personas, 8 horas de corte).</li>
+              </ul>
+              <p>Usa recipientes limpios y con tapa. Prioriza agua para beber, cocinar e higiene.</p>
+            </div>
+
+            <div class="respuesta borja">
+              <p class="alerta-tag">Corte programado · En 3 días</p>
+              <h3>Zona de ejemplo, San Borja</h3>
+              <ul>
+                <li><strong>Fecha:</strong> viernes 23 de mayo</li>
+                <li><strong>Horario estimado:</strong> 9:00 a. m. a 1:00 p. m.</li>
+                <li><strong>Plan de preparación:</strong> guarda 12 litros (3 personas, 4 horas de corte).</li>
+              </ul>
+              <p>Llena los recipientes la noche anterior para no depender del horario.</p>
+            </div>
+
+            <div class="respuesta molina">
+              <p class="alerta-tag ok">Sin cortes programados</p>
+              <h3>La Molina</h3>
+              <ul>
+                <li><strong>Estado:</strong> sin cortes en los últimos 30 días.</li>
+                <li><strong>Plan de preparación:</strong> no necesitas guardar agua por ahora.</li>
+              </ul>
+              <p>Registra tu zona abajo para que te avisemos si esto cambia.</p>
+            </div>
+          </div>
+        </fieldset>
+        <p class="nota">Los datos de Santiago de Surco vienen de nuestros mockups; los de San Borja y La Molina son ficticios.</p>
+      </div>
+    </section>
+
+    <!-- PROYECTOS -->
+    <section id="proyectos" class="seccion">
+      <div class="contenedor">
+        <h2>Proyectos</h2>
+        <p>Nacen de lo que encontramos en nuestras entrevistas con usuarios.</p>
+        <div class="tarjetas">
+          <article class="tarjeta">
+            <h3>Ahorro visible en tareas manuales</h3>
+            <p>Los entrevistados acortaron la ducha, donde el tiempo se ve, pero dejan el caño abierto al lavar los platos. Ofrece una señal en tiempo real.</p>
+          </article>
+          <article class="tarjeta">
+            <h3>Hogares que ahorran juntos</h3>
+            <p>Muchas decisiones sobre el agua se toman en familia. Permite fijar una meta compartida y ver el aporte de cada integrante.</p>
+          </article>
+          <article class="tarjeta">
+            <h3>Prepararse antes del corte</h3>
+            <p>Guardar agua suele ocurrir solo después de un corte. Busca que las personas se anticipen con avisos y recomendaciones.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALERÍA -->
+    <section id="galeria" class="seccion fondo-claro">
+      <div class="contenedor">
+        <h2>Galería</h2>
+        <p>Pantallas de AquaConsciente tal como las diseñamos en Figma.</p>
+        <div class="galeria">
+          <figure>
+            <img src="imagenes/galeria-imagen-referencia.jpeg" alt="Pantalla de monitoreo en vivo con 4,2 litros usados lavando platos y una alerta por caño abierto">
+            <figcaption>Monitoreo en vivo</figcaption>
+          </figure>
+          <figure>
+            <img src="imagenes/galeria-imagen2-referencia.jpeg" alt="Pantalla de monitoreo en vivo con 4,2 litros usados lavando platos y una alerta por caño abierto">
+            <figcaption>Monitoreo en vivo</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIOS -->
+    <section id="testimonios" class="seccion">
+      <div class="contenedor">
+        <h2>Testimonios</h2>
+        <p>Lo que dirían usuarios jóvenes sobre cómo AquaConsciente les ayuda a cuidar el agua.</p>
+        <div class="tarjetas">
+          <article class="tarjeta">
+            <blockquote>
+              <p>«Ya me bañaba más rápido, pero el caño abierto al lavar los platos me ganaba. Con el monitoreo en vivo veo los litros mientras lavo y me acuerdo de cerrarlo.»</p>
+              <footer>— <cite>Lucía Paredes, 21 años, estudiante, Santiago de Surco</cite></footer>
+            </blockquote>
+          </article>
+          <article class="tarjeta">
+            <blockquote>
+              <p>«En mi casa somos 3. Ahora la aplicación me avisa dos días antes del corte y me dice cuántos litros guardar: 18 en total.»</p>
+              <footer>— <cite>Alberto Mendoza, 20 años, estudiante, Santiago de Surco</cite></footer>
+            </blockquote>
+          </article>
+          <article class="tarjeta">
+            <blockquote>
+              <p>«El servicio en mi zona es irregular. Con la alerta sé el horario exacto y me preparo en lugar de correr a llenar baldes.»</p>
+              <footer>— <cite>Diego Salazar, 22 años, estudiante, Santiago de Surco</cite></footer>
+            </blockquote>
+          </article>
+        </div>
+        <p class="nota">Testimonios ficticios elaborados con fines académicos (curso HCI for UX Design).</p>
+      </div>
+    </section>
+
+    <!-- CONTÁCTANOS -->
+    <section id="contacto" class="seccion fondo-claro">
+      <div class="contenedor">
+
+        <h2>Contáctanos</h2>
+        <p class="contacto-intro">
+          Cuéntanos tu distrito y te explicamos cómo avisarte con anticipación
+          cuando haya un corte de agua programado.
+        </p>
+
+        <div class="contacto-grid">
+
+          <!-- Columna 1: datos de contacto -->
+          <div class="tarjeta contacto-datos">
+            <h3>Información de contacto</h3>
+            <ul>
+              <li><strong>Correo:</strong> contacto@aquaconsciente.example</li>
+              <li><strong>Universidad:</strong> UPC, Campus Monterrico</li>
+              <li><strong>Curso:</strong> HCI for UX Design</li>
+            </ul>
+            <p class="nota">
+              Es una simulación académica: tus datos no se envían ni se guardan.
+            </p>
+          </div>
+
+          <!-- Columna 2: formulario -->
+          <form class="tarjeta formulario" action="confirmacion.html" method="get">
+            <h3>Registra tu zona</h3>
+
+            <label for="nombre">Nombre completo</label>
+            <input type="text" id="nombre" required minlength="3">
+
+            <label for="correo">Correo electrónico</label>
+            <input type="email" id="correo" required>
+
+            <label for="distrito">Distrito</label>
+            <select id="distrito" required>
+              <option value="">Elige tu distrito</option>
+              <option>Santiago de Surco</option>
+              <option>San Borja</option>
+              <option>La Molina</option>
+              <option>Otro distrito de Lima</option>
+            </select>
+
+            <label for="mensaje">¿Qué necesitas saber?</label>
+            <textarea id="mensaje" rows="4" required minlength="10"></textarea>
+
+            <div class="casilla">
+              <input type="checkbox" id="acepto" required>
+              <label for="acepto">Acepto que mis datos se usen solo con fines académicos.</label>
+            </div>
+
+            <!-- Párrafo nuevo para mostrar el texto de éxito -->
+            <p id="mensaje-estado" style="margin: 0.5rem 0; font-weight: 600;"></p>
+
+            <button type="submit" id="btn-registro" class="boton">Registrar mi zona</button>
+          </form>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Pie de página -->
+  <footer class="pie">
+    <div class="contenedor pie-grid">
+      <div>
+        <p class="pie-marca">AquaConsciente</p>
+        <p>Proyecto académico de la UPC vinculado al ODS 6: Agua limpia y saneamiento.</p>
+        <p>Correo: contacto@aquaconsciente.example</p>
+      </div>
+      <div>
+        <p class="pie-marca">Síguenos</p>
+        <ul class="redes">
+          <li><a href="https://www.facebook.com/"><img src="iconos/facebook.svg" alt="Facebook" width="32" height="32"></a></li>
+          <li><a href="https://www.instagram.com/"><img src="iconos/instagram.svg" alt="Instagram" width="32" height="32"></a></li>
+          <li><a href="https://www.youtube.com/"><img src="iconos/youtube.svg" alt="YouTube" width="32" height="32"></a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="pie-copy">&copy; 2026 AquaConsciente. Todos los derechos reservados.</p>
+  </footer>
+</body>
+</html>
+<!-- SECCIÓN CHAT -->
+    <section id="chat" class="seccion">
+      <div class="contenedor">
+        <h2>Chat AquaConsciente</h2>
+        <p>¿Tienes dudas sobre cómo ahorrar agua en casa? ¡Escríbenos!</p>
+        
+        <!-- Contenedor principal del chat -->
+        <div class="tarjeta contenedor-chat">
+          <!-- Área donde aparecerán los mensajes -->
+          <div id="caja-mensajes" class="caja-mensajes">
+            <div class="mensaje bot">
+              <p>¡Hola! Soy el asistente de AquaConsciente. ¿En qué te puedo ayudar hoy?</p>
+            </div>
+          </div>
+          
+          <!-- Formulario de envío del chat -->
+          <form id="formulario-chat" class="formulario-chat">
+            <input type="text" id="entrada-chat" placeholder="Escribe tu mensaje aquí..." required autocomplete="off">
+            <button type="submit" class="boton">Enviar</button>
+          </form>
+        </div>
+      </div>
+    </section>

@@ -1,0 +1,6 @@
+CRÉDITOS DE RECURSOS
+- Imágenes de la carpeta imagenes/: ilustraciones referenciales generadas por el Equipo 1 (placeholders). Reemplazar por las capturas reales de Figma y la foto del equipo, conservando los nombres de archivo.
+- Iconos de redes (iconos/): dibujos simples SVG propios, sin marca oficial.
+- Video videos/presentacion.mp4: animación referencial del Equipo 1.
+- Fuentes tipográficas: Georgia y Segoe UI/system-ui del sistema (sin descargas).
+- Testimonios: ficticios, solo con fines académicos.
